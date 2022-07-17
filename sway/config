@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -20,44 +14,6 @@ set $term alacritty
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -show run | xargs swaymsg exec --
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -197,6 +153,19 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# screenshot bind
+bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Shift+Print exec grim - | swappy -f -
+
+# audio bind
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# brightness bind
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
 # opacities
 for_window [app_id="Alacritty"] opacity 0.6
 for_window [app_id="org.gnome.Nautilus"] opacity 0.7
@@ -224,24 +193,10 @@ border_images.focused_inactive /home/frank/.config/sway/dropShadowDark.png
 border_images.unfocused /home/frank/.config/sway/dropShadowUnfocused.png
 border_images.urgent /home/frank/.config/sway/dropShadowDark.png
 
-
-
-# screenshot bind
-bindsym Print exec grim -g "$(slurp)" - | swappy -f -
-bindsym Shift+Print exec grim - | swappy -f -
-
-# audio bind
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-
-# brightness bind
-bindsym XF86MonBrightnessUp exec brightnessctl s +10%
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-
 # background gui helper
 exec ~/.azotebg
 
+# themes
 exec_always {
 	gsettings set org.gnome.desktop.interface gtk-theme 'Qogir-Dark'
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
