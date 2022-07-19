@@ -16,7 +16,7 @@
 	background-color: #434C5E;
 	padding: 0 8px;
 	margin: 2px 2px 5px 2px;
-	border:3px solid rgba(0, 0, 0, 0);
+	border:3px solid #000000;
 	border-radius: 90px;
 	background-clip: padding-box;
 }
