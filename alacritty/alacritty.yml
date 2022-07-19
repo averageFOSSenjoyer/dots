@@ -1,0 +1,50 @@
+# Font configuration
+font: 
+  normal:
+    family: JetBrains Mono
+    style: Regular
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Italic
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+  size: 11.0
+
+# Colors (One Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#282C34'
+    foreground: '#ABB2BF'
+
+  # Normal colors
+  normal:
+    black:   '#282C34'
+    red:     '#E06C75'
+    green:   '#98C379'
+    yellow:  '#D19A66'
+    blue:    '#61AFEF'
+    magenta: '#C678DD'
+    cyan:    '#56B6C2'
+    white:   '#ABB2BF'
+
+  # Bright colors
+  bright:
+    black:   '#5C6370'
+    red:     '#E06C75'
+    green:   '#98C379'
+    yellow:  '#D19A66'
+    blue:    '#61AFEF'
+    magenta: '#C678DD'
+    cyan:    '#56B6C2'
+    white:   '#FFFFFF'
+
+window:
+  padding:
+    x: 10
+    y: 10
+    dynamic_padding: true
