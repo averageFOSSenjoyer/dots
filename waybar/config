@@ -1,21 +1,22 @@
 {
     "height": 36,
-    "modules-left": ["sway/workspaces", "custom/media"],
+    "modules-left": ["wlr/workspaces", "custom/media"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery",  "tray"],
-    "sway/workspaces": {
+    "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
+		"on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-			"3": "",
-			"4": "",
-			"5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
+			"urgent": "",
+        	"focused": "",
+        	"default": "",
+        	"": "",
+        	"2": "",
+	    	"3": "",
+	    	"4": "",
+	    	"5": ""
         }
     },
     "tray": {
