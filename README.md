@@ -1,2 +1,2 @@
 My dotfiles (in progress)
-![nfetch](/img/nf.png)
+![nfetch](/img/preview.png)
