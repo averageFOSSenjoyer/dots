@@ -1,5 +1,6 @@
 {
     "height": 36,
+    "margin": "8px 15px 0px 15px",
     "modules-left": ["wlr/workspaces", "custom/media"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery",  "tray"],
