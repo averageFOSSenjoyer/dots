@@ -19,7 +19,7 @@ colors:
   # Default colors
   primary:
     background: '#282C34'
-    foreground: '#ABB2BF'
+    foreground: '#D0D0D0'
 
   # Normal colors
   normal:
@@ -48,3 +48,4 @@ window:
     x: 10
     y: 10
     dynamic_padding: true
+  opacity: 1.0
